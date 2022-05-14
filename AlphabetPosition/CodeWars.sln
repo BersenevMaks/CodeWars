@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphabetPosition", "Alphabe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindMissingLetter", "FindMissingLetter\FindMissingLetter.csproj", "{130A158C-854B-43E9-9058-E3D10724AEDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoveTheParanthes", "RemoveTheParanthes\RemoveTheParanthes.csproj", "{E8EEE36B-A0AB-4291-B9F0-8BC3BADD87AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{130A158C-854B-43E9-9058-E3D10724AEDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130A158C-854B-43E9-9058-E3D10724AEDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130A158C-854B-43E9-9058-E3D10724AEDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EEE36B-A0AB-4291-B9F0-8BC3BADD87AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EEE36B-A0AB-4291-B9F0-8BC3BADD87AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EEE36B-A0AB-4291-B9F0-8BC3BADD87AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EEE36B-A0AB-4291-B9F0-8BC3BADD87AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
