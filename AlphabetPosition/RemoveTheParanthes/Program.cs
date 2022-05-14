@@ -11,24 +11,20 @@ namespace RemoveTheParanthes
     {
         static void Main(string[] args)
         {
-            int start = 0;
             string s = "(first group) (second group) (third group)";
-            Console.WriteLine(new Regex(@"\([\s\w]+\)|\([\w\s\(\)\-.]+\)", RegexOptions.IgnoreCase).Replace(s, ""));
-            int end = s.Length - 1;
-            for (int i = 0; i < s.Length; i++)
+            string result = "";
+            //Console.WriteLine(new Regex(@"\([\s\w]+\)|\([\w\s\(\)\-.]+\)", RegexOptions.IgnoreCase).Replace(s, ""));
+            int opens = 0;
+            for(int i=0;i<s.Length;i++)
             {
                 if (s.Substring(i, 1) == "(")
-                { start = i; break; }
-            }
-            for (int i = s.Length - 1; i > start; i--)
-            {
+                    opens++;
+                if (opens == 0)
+                    result += s.Substring(i, 1);
                 if (s.Substring(i, 1) == ")")
-                { end = i + 1; break; }
+                    opens--;
             }
-            int numSymb = s.Length - end;
-            if (end >= s.Length) numSymb = 0;
-            Console.WriteLine("\""+s.Substring(0, start) + s.Substring(end, numSymb)+"\"");
-
+            Console.WriteLine("\""+result+ "\"");
             Console.ReadKey();
         }
     }
