@@ -15,6 +15,8 @@ namespace AlphabetWar_Airstrike
         public static void AlphabetWar(string test, string fight)
         {
             string str = "";
+            fight = fight.Replace(" ", "");
+
             bool isBomb = false;
             int score = 0;
             int temp = 0;
@@ -75,7 +77,10 @@ namespace AlphabetWar_Airstrike
             AlphabetWar("Let's fight again!", "zdqmwpbs");
             AlphabetWar("Right side wins!", "zz*zzs");
             AlphabetWar("Left side wins!", "*wwwwww*z*");
-            AlphabetWar("","b*o");
+            AlphabetWar("Let's fight again!", "b*o");
+            AlphabetWar("Let's fight again!", "zs");
+            
+            AlphabetWar("Right side wins!", "hzm*z**d*qjzp**q*spq");
         }
     }
 }
