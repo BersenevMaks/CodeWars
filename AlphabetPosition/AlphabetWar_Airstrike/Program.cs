@@ -12,10 +12,16 @@ namespace AlphabetWar_Airstrike
 
         }
 
-        public static void AlphabetWar(string str)
+        public static void AlphabetWar(string test, string fight)
         {
+            string str = "";
+            bool isBomb = false;
             int score = 0;
             int temp = 0;
+
+            Console.WriteLine("=====");
+            Console.WriteLine(fight+" : "+test);
+
             Dictionary<char, int> Power = new Dictionary<char, int>
             {
                 {'w',-4},
@@ -27,22 +33,26 @@ namespace AlphabetWar_Airstrike
                 {'d',2},
                 {'z',1}
             };
-            Console.WriteLine(str);
-            for (int i = 0; i < str.Length; i++)
+
+            for (int i = 0; i < fight.Length; i++)
             {
-                char c = str[i];
-                
-                if (c == '*')
+                char c = fight[i];
+                if (c != '*')
                 {
-                    if (i > 0)
-                        str.Remove(i - 1);
-                    if (i < str.Length - 1)
-                        str.Remove(i + 1);
-                    str.Remove(i);
+                    if (isBomb)
+                    {
+                        isBomb = false;
+                        continue;
+                    }
+                    str += c;
+                }
+                else if (c == '*')
+                {
+                    if (str.Length > 0 && !isBomb) str = str.Remove(str.Length - 1, 1);
+                    isBomb = true;
                 }
             }
-
-            Console.WriteLine(str);
+            Console.WriteLine("-bobmbs : " + str);
             for (int i = 0; i < str.Length; i++)
             {
                 char c = str[i];
@@ -59,13 +69,13 @@ namespace AlphabetWar_Airstrike
 
         public static void Test()
         {
-            AlphabetWar("z");
-            AlphabetWar("****");
-            AlphabetWar("z*dq*mw*pb*s");
-            AlphabetWar("zdqmwpbs");
-            AlphabetWar("zz*zzs");
-            AlphabetWar("*wwwwww*z*");
-            AlphabetWar("b*o");
+            AlphabetWar("Right side wins!", "z");
+            AlphabetWar("Let's fight again!", "****");
+            AlphabetWar("Let's fight again!", "z*dq*mw*pb*s");
+            AlphabetWar("Let's fight again!", "zdqmwpbs");
+            AlphabetWar("Right side wins!", "zz*zzs");
+            AlphabetWar("Left side wins!", "*wwwwww*z*");
+            AlphabetWar("","b*o");
         }
     }
 }
